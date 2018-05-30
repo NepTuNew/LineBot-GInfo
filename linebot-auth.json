@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "line-bot-game",
+  "private_key_id": "81c20dbe7cd2fe2e73b0d613654d1734bb21bbb4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCKSEBQFHeerTEA\n3YLrXDiBbqWNbr8Aj3OVfxgBp1+QmRE+LVXM/ClKcvcuYeun7bk6vwgeJzDkQtbR\nmQv2p+TXW74bT10/ldXX2kB/fxSXbt/fBFnHFJviuOli+YNhePqe4Cc/Vb0hc0Bb\nLQoTTR0FHullkVnN3m20az8mdDlQjzJbedRhBLN1M9F/nha9K0tb7pR/AoSPDHYm\nykth+L3yy2euGJVJnlTcgcVMCnlMTjT2qUHd+avAi7cFQqmUQ9VlM7bo10PtEKem\n42sVRiWOEqLdfJjaGOaYqB8ev8VgzjadCEFWOYMpXTXfEBulK5ZJiAse5fadm/KP\nTCYEJr+7AgMBAAECggEAQuIobTNBGlgVnCAH6zPrRrtQSsS2kJxR4QycfWxJnkRS\n4TqHRgLvK8nIgcAt/cbPMTllwUPec4Faqv02GqLhXkLLBCWSaidcS6+OQ7yhJo+j\nq5hMnix7K6GZjNw3biVYPxEXGpyrQmsexRrXRTemoivt4sj3YUpE0J+Q51YOxMYQ\nI7gbCWI+Ja5L1gcXY4XUHmMhMTDyMmHbsdXDl2ACwHcalSAHBLtUrA6M3wSUttri\nOapZmTF5uF0NOMUvrn4YPXf91CHdymLee1B26B61nfsHUnxWTxuUKEXvXDoaOL1n\nj8amDFi/INpip8iSQFlQ+OZHALsrbvcgTGFTy3VyYQKBgQC+48JYr3PBiwozepFD\n7g/08zS7l+3hOYnETR9368xgn6YkdPWZStpBbBwNIVwJssfkXNooVdqu/ZD2g81T\nbDLLsbKuAYKMdJch7yUQFz2nmHs6TOWpI7NTZUxCF4OwLxvn3oNpXhMphH55N2cs\n7RuEF99VUqayc1DsNGBv8WQmYQKBgQC5cuCOXZnQ+hrwVzulMb8VTEKAj0rZhZ6O\nfuBOdqH/+CpeziPBJIG4MTZVYSF7Zj6mp7xQB2ItVisJyiLGaamRtMMVK5OMnvCY\n6LrDimo3AVtsxK7iNrf9SAI3usMyO6Uud3a5WEbzE6yHHf0shqYOwoi1nK10hAOQ\nwEVJKSxjmwKBgCkDhKFLaUKfXhy7a/S9dJ47lwvrU8f9ddVAgM9iUXI9OxRAMPiz\ntXszAD/t9/l5eSteq9zYvXi1sGzW2sneyHctgeeTGXqWHlbDLCJt6+hTgb6AASQ7\nMG9tp1nX9YpoRMWn8HI2LUXRWt8ugTOM6kmSW4DYlkpnLm7hvgqvQcZhAoGASuYX\nxcgOCLYKzUkeIOEPoOV08oFtJJ9v43Ng2q/VTBGJ41J0ZFx/O8o8fI1HPZSU9zBF\nwTjKMS9dII4QL3ybbOrJ47H+3MuQtuFAFRvBPEgDCdICJAEfnF9J7gIzNgWa+EJt\no/wAY8ptYwD8sNANH2b4WglWkPmEiyDsmtjTQcMCgYEAoJibyFEroEQY6C4dq/ho\nVMA5JimEKPXKOofo/uEjX/S0JuCmFzLM6GY2wwlINYq4dL1TafhJEUFOEK00ZxTh\nO6pql6wmsfwnYukOGnkgRpykrzN9RfwbZRvzeWKVR4ObCRW9btCG+Z3pvkVEoD9P\nONOI18CEshRdUt0m38FfHa4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "yashengliu@line-bot-game.iam.gserviceaccount.com",
+  "client_id": "116998548416946479940",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/yashengliu%40line-bot-game.iam.gserviceaccount.com"
+}
