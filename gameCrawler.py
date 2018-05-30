@@ -13,12 +13,12 @@ no_image = 'https://i.imgur.com/j0tfIPQ.jpg'
 def test():
 	print('GameCrawler Model Loader!')
 def upload_photo(image_url, image_name):
-	client_id = '8abf49bf56c6fb8'
-	client_secret = '63aad717eb60baad03081c11b19e0b485b4f6259'
-	access_token = 'a6bf1cf71cb328694de556b6470e39b40d8986a2'
-	refresh_token = 'e05709a770712005321ff024d0884ce3f0fed092'
+	client_id = 'YOUR_CLIENT_ID'
+	client_secret = 'YOUR_CLIENT_SECRET'
+	access_token = 'YOUR_ACCESS_TOKEN'
+	refresh_token = 'YOUR_REFRESH_TOKEN'
 	client = ImgurClient(client_id, client_secret, access_token, refresh_token)
-	album_id = '9xTe7uU'
+	album_id = 'YOUR_ALBUM_ID'
 	album = client.get_album(album_id)
 	# check whether image have been upload ever 
 	for image in album.images:

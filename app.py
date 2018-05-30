@@ -17,9 +17,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('ZExvrX3JjRJ0f4Qk8kGMSby3cJV7AyeqAaeBQx/zfyMO46IC4Jqf9WqNUKlZ8Ve8uIZ8M/QqVUacBTEtDf17hYIEjZT4C402DygjUjgqDRhpAFghh8RJeYhjwufFVceynNloh91IWbaSW8Zx2VDPXgdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('839eeb12b33722f7cc347c0899cc10f8')
-spreadsheet_key_path = '1lpqhd_ZUGTVayeNfBfAMXhz4Foidhbn4Aixb3NGsopc'
+line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
+handler = WebhookHandler('YOUR_CHANNEL_SECRET')
+spreadsheet_key_path = 'GOOGLE_SHEET_KEY_PATH'
 gss_client = gsheet.auth_gss_client('linebot-auth.json', ['https://spreadsheets.google.com/feeds'])
 
 

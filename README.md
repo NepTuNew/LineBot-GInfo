@@ -1,4 +1,4 @@
-#LineBot-GInfo
+# LineBot-GInfo
 
 GInfo是一個遊戲助手可以幫助您查詢遊戲的最新活動資訊。
 使用python和LineSDK開發的聊天機器人。
