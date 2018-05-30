@@ -36,9 +36,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-	time = datetime.datetime.now()
-	gsheet.update_sheet(gss_client, spreadsheet_key_path, str(datetime.date.today())
-		, str(time.hour)+':'+str(time.minute), event.message.text)
+	time = datetime.datetime.now().strftime("%Y-%m-%d %H-%M-%S")
+	gsheet.update_sheet(gss_client, spreadsheet_key_path, time.split(' ')[0]
+		, time.split(' ')[1], event.message.text)
 	if event.message.text in helper.helps:
 		message = TextSendMessage(text=helper.hint)
 		line_bot_api.reply_message(
