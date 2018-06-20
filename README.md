@@ -11,17 +11,17 @@ GInfo是一個遊戲助手可以幫助您查詢遊戲的最新活動資訊。
 
 1. 呼叫遊戲列表可以打：你好, help
 
-![image](./imgs/1.PNG)
+<img src="./imgs/1.PNG" width="50%" height="50%">
 
 2. 查詢遊戲資訊： [遊戲編號(遊戲列表中的)或遊戲名稱]
 
-![image](./imgs/2.PNG)
+<img src="./imgs/2.PNG" width="50%" height="50%">
 
 3. 個人化功能：請使用更多資訊跳出選單：星星(我的最愛)，齒輪(提示設定指令)，信(作者email)
 
-![image](./imgs/3.PNG)
-![image](./imgs/4.PNG)
-![image](./imgs/5.PNG)
+<img src="./imgs/3.PNG" width="50%" height="50%">
+<img src="./imgs/4.PNG" width="50%" height="50%">
+<img src="./imgs/5.PNG" width="50%" height="50%">
 
 ## Game Keyword
 
