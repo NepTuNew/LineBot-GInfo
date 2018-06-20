@@ -7,6 +7,7 @@ import time
 from linebot.models import (
 	CarouselTemplate, TemplateSendMessage, CarouselColumn, URITemplateAction
 )
+import helper
 
 no_image = 'https://i.imgur.com/j0tfIPQ.jpg'
 
@@ -110,6 +111,13 @@ def getRO(push_num):
 	for content in tmp:
 		if content.find('span'):
 			lists.append(content)
+	# check the 'a' element href values is valid for our code format
+	check_index = []
+	for index, content in enumerate(lists):
+		if content.find('a').get('href').find('news') == -1 or  content.find('a').get('href').find('id') == -1:
+			check_index.append(index)
+	for i in range(len(check_index)):
+		del lists[check_index[-(i+1)]]
 
 	for i in range(push_num):
 		titles.append(lists[i].find_all('span')[title_index].text)
@@ -124,7 +132,70 @@ def getRO(push_num):
 			imgs.append(no_image)
 	return titles, links, imgs
 
-def createCarousel(titles, links, imgs):
+def getAoV(push_num):
+	# push_num must be three, beacause of the website format
+	aov_url = 'https://moba.garena.tw/news/Activity#guild'
+	res = requests.get(aov_url)
+	soup = BeautifulSoup(res.text, 'lxml')
+	result = soup.find_all('div', {'class': 'event'})
+
+	titles= []
+	links = []
+	imgs = []
+	for i in range(push_num):
+		title = result[i].find('div', {'class': 'event_title'}).text.replace(' ', '')
+		titles.append(title.replace('\n', ''))
+		links.append(result[i].a.get('href'))
+		imgs.append(result[i].a.img.get('src'))
+	return titles, links, imgs
+
+def getLineageM(push_num):
+	url = 'https://tw.beanfun.com/LineageM/Bulletins/include/Bulletins_Proxy.aspx?ServiceType=562&alt=0&Page=1&method=3&Kind=564&Pagesize=30'
+	res = requests.get(url)
+	data = json.loads(res.text)
+	data = data['MyDataSet']['Table']
+
+	titles = []
+	links = []
+	imgs = []
+
+	for i in range(push_num):
+		titles.append(data[i]['Title'])
+		links.append(data[i]['UrlLink'])
+		imgs.append(no_image)
+	return titles, links, imgs
+
+def getPokemon(push_num):
+	pokemon_url = 'https://pokemongolive.com/zh_hant/post'
+	links_prefix = 'https://pokemongolive.com'
+	imgs_prefix = 'https://pokemongolive.com'
+	date_class = 'grid__item--12-cols grid__item--2-cols--gt-lg grid__item post-list__date-item'
+	title_class = 'grid__item--12-cols grid__item--10-cols--gt-lg grid__item post-list__title '
+	res = requests.get(pokemon_url)
+	res.encoding=('utf-8') # website encoding problem
+	soup = BeautifulSoup(res.text, 'lxml')
+	date = soup.find_all('div', {'class': date_class})
+	title = soup.find_all('div', {'class': title_class})
+
+	titles = []
+	links = []
+	imgs = []
+	for i in range(push_num):
+		if len(title[i].a.text) > 60:
+			tmp = title[i].a.text[:57]+'...'
+			titles.append(tmp)
+		else:
+			titles.append(title[i].a.text)
+		links.append(links_prefix+title[i].a.get('href'))
+		res = requests.get(links[i])
+		res.encoding=('utf-8')
+		soup = BeautifulSoup(res.text, 'lxml')
+		img_url = soup.find('img', {'class': 'image__image '}).get('src')
+		imgs.append(imgs_prefix+img_url)
+
+	return titles, links, imgs
+
+def createCarousel(titles, links, imgs, push_num):
 	carousel_message = TemplateSendMessage(
 		type = 'template',
 		alt_text = 'TowerSaviors Template',
@@ -132,54 +203,17 @@ def createCarousel(titles, links, imgs):
 			type = 'carousel',
 			columns = [
 				CarouselColumn(
-					thumbnail_image_url = imgs[0],
-					title = 'Lastest Activity',
-					text = titles[0],
+					thumbnail_image_url = imgs[i],
+					title = helper.activity_order[i],
+					text = titles[i],
 					actions = [
 						URITemplateAction(
 							type = 'uri',
 							label = 'Detail',
-							uri = links[0]
+							uri = links[i]
 						)
 					]
-				),
-				CarouselColumn(
-					thumbnail_image_url = imgs[1],
-					title = 'Second Activity',
-					text = titles[1],
-					actions = [
-						URITemplateAction(
-							type = 'uri',
-							label = 'Detail',
-							uri = links[1]
-						)
-					]
-				),
-				CarouselColumn(
-					thumbnail_image_url = imgs[2],
-					title = 'Third Activity',
-					text = titles[2],
-					actions = [
-						URITemplateAction(
-							type = 'uri',
-							label = 'Detail',
-							uri = links[2]
-						)
-					]
-				),
-				CarouselColumn(
-					thumbnail_image_url = imgs[3],
-					title = 'Fourth Activity',
-					text = titles[3],
-					actions = [
-						URITemplateAction(
-							type = 'uri',
-							label = 'Detail',
-							uri = links[3]
-						)
-					]
-				)
-
+				) for i in range(push_num)
 			]
 		)
 	)
