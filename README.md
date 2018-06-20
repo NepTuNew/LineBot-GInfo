@@ -27,9 +27,21 @@ GInfo是一個遊戲助手可以幫助您查詢遊戲的最新活動資訊。
 
 可以輸入其他遊戲簡稱來使用服務，以下為目前提供的遊戲服務：
 
-* 神魔之塔
-* FGO（Fate/Grand Order）
-* RO (RO仙境傳說：守護永恆的愛)
+* 1.神魔之塔
+* 2.FGO（Fate/Grand Order）
+* 3.RO (RO仙境傳說：守護永恆的愛)
+* 4.傳說對決(傳說)
+* 5.天堂M(天堂)
+* 6.PokemonGo(寶可夢)
+
+## Creator
+
+* NepTuNe
+* E-mail: anderson08121995@gmail.com
+
+## Info source
+
+* From their official website.
 
 ## QRcode
 ![alt tag](https://i.imgur.com/PvEN6HS.png)
