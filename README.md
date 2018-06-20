@@ -17,7 +17,7 @@ GInfo是一個遊戲助手可以幫助您查詢遊戲的最新活動資訊。
 
 <img src='https://i.imgur.com/2qHaFm2.png' width='400'>
 
-3. 個人化功能：請使用更多資訊跳出選單：星星(我的最愛)，齒輪(提示設定指令)，信(作者email)
+3. 個人化功能：請使用更多資訊跳出選單：我的最愛(左上)，提示設定指令(右上)，聯絡作者(右下)，查詢列表(右下)
 
 <img src='https://i.imgur.com/JPIoQ3D.png' width='400'>
 <img src='https://i.imgur.com/yWNhg6E.png' width='400'>
